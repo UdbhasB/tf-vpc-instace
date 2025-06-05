@@ -5,6 +5,7 @@ resource "aws_vpc" "my_vpc" {
   enable_dns_hostnames = true
   tags = {
     Name = var.vpc_name
+    Project = "Lab"
   }
   
 }
@@ -16,6 +17,7 @@ resource "aws_subnet" "public_subnet" {
   map_public_ip_on_launch = true
   tags = {
     Name = var.web_subnet_name
+    Project = "Lab"
   }
   
 }
@@ -26,6 +28,7 @@ resource "aws_subnet" "private_subnet" {
   availability_zone = var.availability_zone1
   tags = {
     Name = var.app_sub_name
+    Project = "Lab"
   }
   
 }   
@@ -37,6 +40,7 @@ resource "aws_subnet" "db_subnet" {
   map_public_ip_on_launch = true
   tags = {
     Name = var.db_sub_name
+    Project = "Lab"
   }
 }
 
@@ -45,6 +49,7 @@ resource "aws_route_table" "pub_route" {
   vpc_id = aws_vpc.my_vpc.id
   tags = {
     Name = var.pub_route_name
+    Project = "Lab"
   }
 }
 # Private Route Table
@@ -52,6 +57,7 @@ resource "aws_route_table" "pri_route" {
   vpc_id = aws_vpc.my_vpc.id
   tags = {
     Name = var.pri_route_name
+    Project = "Lab"
   }
 }
 
@@ -78,6 +84,7 @@ resource "aws_internet_gateway" "my_igw" {
   vpc_id = aws_vpc.my_vpc.id
   tags = {
     Name = var.my_igw_name
+    Project = "Lab"
   }
 }
 
@@ -93,6 +100,7 @@ resource "aws_eip" "elastic_ip" {
   domain = "vpc"
   tags = {
     Name = var.elastic_ip_name
+    Project = "Lab"
   }
 }
 
@@ -102,6 +110,7 @@ resource "aws_nat_gateway" "my_nat_gw" {
   subnet_id     = aws_subnet.public_subnet.id
   tags = {
     Name = var.my_natgw_name
+    Project = "Lab"
   }
 }
 

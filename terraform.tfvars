@@ -32,3 +32,14 @@ my_igw_name = "igw-ud"
  my_natgw_name = "natgw_ud"
 # NAT GW CIDR
 natgw_cidr = "0.0.0.0/0"
+#ami id
+ami_id = "ami-02457590d33d576c3"
+# Instance Type
+instance_type = "t2.micro"
+# Key Pair Name
+key_pair_name = "Key-projectLab"
+private_instance_name = "web-db"
+public_instance_name = "web-frontend"
+public_sg_name = "public-sg"
+private_sg_name = "private-sg"
+public_instance_eip_name = "web-frontend-eip"
